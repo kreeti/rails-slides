@@ -47,7 +47,7 @@
             <h4>Create New Rails Application</h4>
             <p>Create a new Rails application in your home directory. Use the -d mysql option to set MySQL as the database, and be sure to substitute the highlighted word with your application name:</p>
           <pre>
-            <code>
+            <code data-trim>
               cd ~
               rails new appname -d mysql
             </code></pre>
@@ -60,7 +60,7 @@
 
         <section>
           <p>Then move into the application's directory:</p>
-          <pre><code>
+          <pre><code data-trim>
               cd appname
             </code></pre>
           <p>The next step is to configure the application's database connection.</p>
@@ -72,18 +72,14 @@
             <p style="font-size: 25px;">If you followed the MySQL install instructions from this tutorial, you set a password for MySQL's root user. The MySQL root login will be used to create your application's test and development databases.</p>
 
             <p style="font-size: 25px;">Open your application's database configuration file in your favorite text editor. We'll use emacs:</p>
-            <pre>
-              <code>
+            <pre><code data-trim>
               emacs config/database.yml
-              </code>
-            </pre>
+            </code></pre>
 
             <p style="font-size: 25px;">Under the default section, find the line that says "password:" and add the password to the end of it. It should look something like this (replace the highlighted part with your MySQL root password):</p>
-            <pre>
-              <code>
-              password: mysql_root_password
-              </code>
-            </pre>
+            <pre><code data-trim>
+password: mysql_root_password
+              </code></pre>
 
             <p style="font-size: 25px;">Save and exit.</p>
           </section>
@@ -95,7 +91,7 @@
         <section>
           <h4>Create Application Databases</h4>
           <p>Create your application's development and test databases by using this rake command:</p>
-          <pre><code>
+          <pre><code data-trim>
               rake db:create
             </code></pre>
           <p>This will create two databases in your MySQL server. For example, if your application's name is "appname", it will create databases called "appname_development" and "appname_test".</p>
@@ -108,7 +104,7 @@
 
             <p>For example, to run the development environment (the default), use this command:</p>
             <pre>
-              <code>
+              <code data-trim>
               rails server
               </code>
             </pre>
@@ -128,7 +124,7 @@
           <h4>First-time system setup</h4>
 
           <p>Before using Git, you should perform a couple of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
-          <pre><code>$ git config --global user.name "Your Name"
+          <pre><code data-trim>$ git config --global user.name "Your Name"
 $ git config --global user.email your.email@example.com</code></pre>
         </section>
 
@@ -136,10 +132,10 @@ $ git config --global user.email your.email@example.com</code></pre>
           <h4>First-time repository setup</h4>
 
           <p>The first step is to navigate to the root directory of the app and initialize a new repository:</p>
-          <pre><code>$ git init
+          <pre><code data-trim>$ git init
 Initialized empty Git repository in /home/ubuntu/workspace/hello_app/.git/</code></pre>
           <p>The next step is to add all the project files to the repository using git add -A:</p>
-          <pre><code>$ git add -A</code></pre>
+          <pre><code data-trim>$ git add -A</code></pre>
           <p>This command adds all the files in the current directory apart from those that match the patterns in a special file called .gitignore</p>
         </section>
 
@@ -147,7 +143,7 @@ Initialized empty Git repository in /home/ubuntu/workspace/hello_app/.git/</code
         <section>
           <section>
             <p>The added files are initially placed in a staging area, which contains pending changes to our project. We can see which files are in the staging area using the status command</p>
-            <pre><code>
+            <pre><code data-trim>
             $ git status
             On branch master
 
@@ -168,7 +164,7 @@ Initialized empty Git repository in /home/ubuntu/workspace/hello_app/.git/</code
           </section>
           <section>
             <p>To tell Git we want to keep the changes, we use the commit command:</p>
-            <pre><code>$ git commit -m "Initialize repository"
+            <pre><code data-trim>$ git commit -m "Initialize repository"
 [master (root-commit) df0a62f] Initialize repository
 .
 .
@@ -180,7 +176,7 @@ Initialized empty Git repository in /home/ubuntu/workspace/hello_app/.git/</code
             <ol>
               <li>Sign up for a Bitbucket account if you don’t already have one.</li>
               <li>Copy your public key to your clipboard.
-                <pre><code>$ cat ~/.ssh/id_rsa.pub</code></pre>
+                <pre><code data-trim>$ cat ~/.ssh/id_rsa.pub</code></pre>
               </li>
               <li>Add your public key to Bitbucket by clicking on the avatar image in the upper right and selecting “Manage account” and then “SSH keys”</li>
             </ol>
@@ -193,7 +189,7 @@ Initialized empty Git repository in /home/ubuntu/workspace/hello_app/.git/</code
           </section>
 
           <section>
-            <pre><code>$ git remote add origin git@bitbucket.org:<username>/hello_app.git
+            <pre><code data-trim>$ git remote add origin git@bitbucket.org:<username>/hello_app.git
               $ git push -u origin --all</code></pre>
               <p>The commands first tell Git that you want to add Bitbucket as the origin for your repository, and then push your repository up to the remote origin</p>
           </section>
@@ -207,7 +203,7 @@ Initialized empty Git repository in /home/ubuntu/workspace/hello_app/.git/</code
 
         <section>
           Before doing any changes we will create new git branch using the following command
-          <pre><code>$ git checkout -b branch_name
+          <pre><code data-trim>$ git checkout -b branch_name
 Switched to a new branch 'branch_name'
           </code></pre>
         </section>
@@ -215,7 +211,7 @@ Switched to a new branch 'branch_name'
         <section>
           <section>
             We will create a controller name 'home' using the following command
-            <pre><code>$ rails g controller home
+            <pre><code data-trim>$ rails g controller home
 Running via Spring preloader in process 17742
       create  app/controllers/home_controller.rb
       invoke  erb
@@ -234,17 +230,17 @@ Running via Spring preloader in process 17742
           </section>
           <section>
             Open home_controller.rb file in your editor
-            <pre><code>class HomeController < ApplicationController
+            <pre><code data-trim>class HomeController < ApplicationController
 end
             </code></pre>
             Add an action called index
-            <pre><code>class HomeController < ApplicationController
+            <pre><code data-trim>class HomeController < ApplicationController
   def index
   end
 end
             </code></pre>
             Now open the routes.rb file and 'home#index' as root_path
-            <pre><code>
+            <pre><code data-trim>
 Rails.application.routes.draw do
   root 'home#index'
   .
@@ -255,7 +251,7 @@ end
 
           <section>
             Now go to the "app/view/home" folder and add index.html.erb file and add the following
-            <pre><code><h2>This is the home page</h2></code></pre>
+            <pre><code data-trim><h2>This is the home page</h2></code></pre>
             Now run the rails server and open localhost:3000 in the browser, you will see
             <img data-src="./image/home.png">
           </section>
@@ -265,7 +261,7 @@ end
           <section>
           <h4>Commit the latest changes</h4>
           To get the latest uncommited changes run the following command
-          <pre><code>$ git status
+          <pre><code data-trim>$ git status
 On branch home
 Changes not staged for commit:
   (use "git add file..." to update what will be committed)
@@ -291,18 +287,18 @@ Untracked files:
           <section>
             <p>app/controllers/home_controller.rb~, config/#routes.rb# some unnecessary files are present in the list. So we will not commit those file.</p>
             <p>To ignore these file open .gitignore file and add the following</p>
-            <pre><code>*~
+            <pre><code data-trim>*~
 *#
             </code></pre>
             Rest of the untracked files we will add to git by running the following command
-            <pre><code>$ git add .</code></pre>
+            <pre><code data-trim>$ git add .</code></pre>
             Or we can add files by typing the filename with path, like
-            <pre><code>$ git add app/helpers/home_helper.rb app/views/home/</code></pre>
+            <pre><code data-trim>$ git add app/helpers/home_helper.rb app/views/home/</code></pre>
           </section>
 
           <section>
             Now if you do git status you can see these
-            <pre><code> $ git status
+            <pre><code data-trim> $ git status
 On branch home
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
@@ -316,11 +312,11 @@ Changes to be committed:
        modified:   config/routes.rb
        new file:   test/controllers/home_controller_test.rb</code></pre>
               <p>Now we will commit these changes</p>
-              <pre><code>git commit -m "add home controller" -a</code></pre>
+              <pre><code data-trim>git commit -m "add home controller" -a</code></pre>
           </section>
           <section>
             Merge these branch into master
-            <pre><code>$ git checkout master
+            <pre><code data-trim>$ git checkout master
 $ git merge home
 Updating e6ae8cf..7bf82bd
 Fast-forward
@@ -350,20 +346,20 @@ Fast-forward
         <section>
           <section>
             <p>Create a new branch from master</p>
-            <pre><code>$ git checkout -b add_bootstrap</code></pre>
+            <pre><code data-trim>$ git checkout -b add_bootstrap</code></pre>
             <p>Open Gemfile, add "gem 'bootstrap-sass'" to list and do bundle</p>
             <p>Now go to app/assets/stylesheets folder, change filename application.css to application.scss, remove all the content and add the following</p>
-            <pre><code>@import "bootstrap-sprockets";
+            <pre><code data-trim>@import "bootstrap-sprockets";
 @import "bootstrap";
             </code></pre>
             <p>Open app/assets/javascripts/application.js file and add the following</p>
-            <pre><code>//= require bootstrap-sprockets</code></pre>
+            <pre><code data-trim>//= require bootstrap-sprockets</code></pre>
             And remove
-            <pre><code>//= require turbolinks</code></pre>
+            <pre><code data-trim>//= require turbolinks</code></pre>
           </section>
           <section>
             Open app/views/layout/application.html.erb file and replace the content
-            <pre><code><!DOCTYPE html>
+            <pre><code data-trim><!DOCTYPE html>
 &lt;html&gt;
   &lt;head&gt;
      <title>TestApp</title>
@@ -391,9 +387,9 @@ Fast-forward
 
           <section>
             In the above code we have added a partial
-            <pre><code><%= render "layouts/navbar" %></code></pre>
+            <pre><code data-trim><%= render "layouts/navbar" %></code></pre>
             This contains the navigation bar for your site. But there is no file as such. So add '_navbar.html.erb' to app/views/layout folder and add the following code
-            <pre><code>
+            <pre><code data-trim>
 <nav class="navbar navbar-inverse navbar-static-top">
    <div class="container">
       <div class="navbar-header">
@@ -427,17 +423,17 @@ Fast-forward
         <section>
           <section>
             You can add it to your Gemfile with:
-            <pre><code>gem 'devise'</code></pre>
+            <pre><code data-trim>gem 'devise'</code></pre>
             <p>Run the bundle command to install it.</p>
             Next, you need to run the generator:
-            <pre><code>$ rails generate devise:install</code></pre>
+            <pre><code data-trim>$ rails generate devise:install</code></pre>
           </section>
           <section>
             <img data-src="./image/devise.png">
           </section>
           <section>
             <p>Add Devise to any of your models using the generator.</p>
-            <pre><code>$ rails g devise user
+            <pre><code data-trim>$ rails g devise user
 Running via Spring preloader in process 19374
   invoke  active_record
   create    db/migrate/20160824093232_devise_create_users.rb
@@ -461,7 +457,7 @@ Running via Spring preloader in process 19374
           </section>
           <section>
             Then run rake db:migrate
-            <pre><code>$ rake db:migrate
+            <pre><code data-trim>$ rake db:migrate
 == 20160824093232 DeviseCreateUsers: migrating ================================
 -- create_table(:users)
    -> 0.3213s
@@ -475,11 +471,11 @@ Running via Spring preloader in process 19374
 
           <section>
             Devise will create some helpers to use inside your controllers and views. To set up a controller with user authentication, just add this before_action
-            <pre><code>before_action :authenticate_user!</code></pre>
+            <pre><code data-trim>before_action :authenticate_user!</code></pre>
             To verify if a user is signed in, use the following helper:
-            <pre><code>user_signed_in?</code></pre>
+            <pre><code data-trim>user_signed_in?</code></pre>
             For the current signed-in user, this helper is available:
-            <pre><code>current_user</code></pre>
+            <pre><code data-trim>current_user</code></pre>
           </section>
         </section>
 
@@ -506,7 +502,7 @@ Running via Spring preloader in process 19374
           <section>
           <p>Create a new branch from master first</p>
           <p>For users we will need index and show action</p>
-          <pre><code>
+          <pre><code data-trim>
 $ rails g controller users index show
 Running via Spring preloader in process 19759
       create  app/controllers/users_controller.rb
@@ -535,7 +531,7 @@ Running via Spring preloader in process 19759
           </section>
           <section>
             Replace the controller code with following
-            <pre><code>
+            <pre><code data-trim>
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -550,7 +546,7 @@ end
 
           <section>
             Now open the app/views/users/index.html.erb and replace content with following
-            <pre><code>
+            <pre><code data-trim>
 <div class="container">
   <div class="row">
     <h3>Users</h3>
@@ -572,7 +568,7 @@ end
 
           <section>
             Now open the app/views/users/show.html.erb and replace content with following
-            <pre><code>
+            <pre><code data-trim>
 <div class="container">
   <div class="row border-bottom">
     <h4 class="pull-left"><%= @user.email %></h4>
@@ -581,7 +577,7 @@ end
           </section>
           <section>
             Update the routes file
-            <pre><code>
+            <pre><code data-trim>
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show]
@@ -593,7 +589,7 @@ end
 
         <section>
           Update the content of navbar.html.erb
-          <pre><code>
+          <pre><code data-trim>
 <ul class="nav navbar-nav navbar-right">
   <% if user_signed_in? %>
   <li class="dropdown">
@@ -631,7 +627,7 @@ end
         <section>
           <p>First we will add model for post. Post model contains title, content, user_id as attributes</p>
           <p>To create post model run the command. It will create table called posts</p>
-          <pre><code>$ rails g model post user_id:integer title:string content:text
+          <pre><code data-trim>$ rails g model post user_id:integer title:string content:text
 Running via Spring preloader in process 20354
   invoke  active_record
   create    db/migrate/20160824105601_create_posts.rb
@@ -640,12 +636,12 @@ Running via Spring preloader in process 20354
   create      test/models/post_test.rb
   create      test/fixtures/posts.yml</code></pre>
           OR
-          <pre><code>$ rails g model post</code></pre>
+          <pre><code data-trim>$ rails g model post</code></pre>
           Then open the migration file and add the columns.
         </section>
         <section>
           Add constraints to migration file
-          <pre><code>
+          <pre><code data-trim>
 create_table :posts do |t|
   t.integer :user_id, null: false
   t.string :title, null: false
@@ -655,7 +651,7 @@ create_table :posts do |t|
 end
 </code></pre>
           Then finally run the command
-          <pre><code>$ rake db:migrate
+          <pre><code data-trim>$ rake db:migrate
 == 20160824105601 CreatePosts: migrating ======================================
 -- create_table(:posts)
    -> 0.3062s
@@ -677,15 +673,15 @@ end
           </section>
           <section>
             To rollback the last migration rub the command
-            <pre><code>rake db:rollback
+            <pre><code data-trim>rake db:rollback
 == 20160824105601 CreatePosts: reverting ======================================
 -- drop_table(:posts)
    -> 0.1500s
 == 20160824105601 CreatePosts: reverted (0.3737s) =============================</code></pre>
             Add the following to the migration
-            <pre><code>add_foreign_key :posts, :users</code></pre>
+            <pre><code data-trim>add_foreign_key :posts, :users</code></pre>
             Re-run the command
-            <pre><code>rake db:migrate
+            <pre><code data-trim>rake db:migrate
 == 20160824105601 CreatePosts: migrating ======================================
 -- create_table(:posts)
    -> 0.2946s
@@ -696,14 +692,14 @@ end
           </section>
           <section>
             Or to create a new migration run the command
-            <pre><code>rails g migration add_foreign_key_to_posts
+            <pre><code data-trim>rails g migration add_foreign_key_to_posts
 Running via Spring preloader in process 20541
       invoke  active_record
       create    db/migrate/20160824111210_add_foreign_key_to_posts.rb
             </code></pre>
             In the new migration file just add the following line and run the migration
-            <pre><code>add_foreign_key :posts, :users</code></pre>
-            <pre><code>rake db:migrate
+            <pre><code data-trim>add_foreign_key :posts, :users</code></pre>
+            <pre><code data-trim>rake db:migrate
 == 20160824111210 AddForeignKeyToPosts: migrating =============================
 == 20160824111210 AddForeignKeyToPosts: migrated (0.0000s) ====================
             </code></pre>
@@ -718,17 +714,17 @@ Running via Spring preloader in process 20541
             <p>If we notice the posts table, we will see user_id is present. i.e, post belongs to user.</p>
             <p>So we will add belongs_to association in post model.</p>
             <p>Open app/models/post.rb and add following.</p>
-            <pre><code>belongs_to :user</code></pre>
+            <pre><code data-trim>belongs_to :user</code></pre>
             <p>We will have to add the reverse association too.</p>
             <p>For this open app/model/user.rb and add following.</p>
-            <pre><code>has_many :posts</code></pre>
+            <pre><code data-trim>has_many :posts</code></pre>
           </section>
           <section>
             We are done with association. Now we have to add model validation
           </section>
           <section>
             <p>Open app/models/post.rb and add following.</p>
-            <pre><code>validates :user_id, :title, :content, presence: true</code></pre>
+            <pre><code data-trim>validates :user_id, :title, :content, presence: true</code></pre>
             <p>It will check presence for the above attributes</p>
           </section>
         </section>
@@ -739,7 +735,7 @@ Running via Spring preloader in process 20541
           </section>
           <section>
             Run the command to create the posts controller
-            <pre><code>rails g controller posts
+            <pre><code data-trim>rails g controller posts
 Running via Spring preloader in process 20671
   create  app/controllers/posts_controller.rb
   invoke  erb
@@ -755,7 +751,7 @@ Running via Spring preloader in process 20671
   invoke    scss
   create      app/assets/stylesheets/posts.scss</code></pre>
             open the routes file and add the following line
-            <pre><code>resources :posts, only: [:index, :show, :new, :create]</code></pre>
+            <pre><code data-trim>resources :posts, only: [:index, :show, :new, :create]</code></pre>
           </section>
         </section>
 
@@ -763,7 +759,7 @@ Running via Spring preloader in process 20671
           <section>
             <p>Now first we will add controller logic and view for new action.</p>
             <p>First open the controller code and add the following lines.</p>
-            <pre><code>  before_action :authenticate_user!
+            <pre><code data-trim>  before_action :authenticate_user!
 
   def new
     @post = current_user.posts.build
@@ -772,7 +768,7 @@ Running via Spring preloader in process 20671
           </section>
           <section>
             <p>Create new.html.erb file in app/views/posts folder and add the following line</p>
-            <pre><code>
+            <pre><code data-trim>
 <%= form_for @post, method: "POST", html: { class: "form-horizontal" } do |f| %>
   <div class="form-group">
     <%= f.label :title, class: "col-sm-3 control-label" %>
@@ -806,7 +802,7 @@ Running via Spring preloader in process 20671
           </section>
           <section>
             Open posts controller and add the following line
-            <pre><code>
+            <pre><code data-trim>
 def create
   post = current_user.posts.build(post_params)
 
@@ -826,7 +822,7 @@ end
           </section>
           <section>
             if you check your log you will get the following when you submit the form
-            <pre><code>
+            <pre><code data-trim>
 Started POST "/posts" for 127.0.0.1 at 2016-08-24 17:22:50 +0530
 Processing by PostsController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q26W6t0dESfOznim0e8aQEu4dpehBekEVveynGV2HzSVi5z1m2QZx6rXjvvpsTjFNAD35hC+wComCdMfKPwUGQ==", "post"=>{"title"=>"My first Post", "content"=>"Sample post created for rails tuttorial"}, "commit"=>"Save"}
@@ -847,12 +843,12 @@ Completed 302 Found in 92ms (ActiveRecord: 45.5ms)
           </section>
           <section>
             Add the following code to posts controller
-            <pre><code>
+            <pre><code data-trim>
 def index
   @posts = Post.paginate(:page => params[:page])
 end            </code></pre>
             Create index.html.erb file and add the followings
-            <pre  style="font-size:25px;"><code>
+            <pre style="font-size:25px;"><code data-trim>
 <div class="container">
   <div class="row">
     <h3 class="pull-left">Posts</h3>
