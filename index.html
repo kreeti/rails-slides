@@ -1,26 +1,26 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
     <!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
@@ -50,8 +50,7 @@
             <code>
               cd ~
               rails new appname -d mysql
-            </code>
-          </pre>
+            </code></pre>
           <p>It will create the structure of your application and also install the gems and other dependencies</p>
           </section>
           <section>
@@ -61,11 +60,9 @@
 
         <section>
           <p>Then move into the application's directory:</p>
-          <pre>
-            <code>
+          <pre><code>
               cd appname
-            </code>
-          </pre>
+            </code></pre>
           <p>The next step is to configure the application's database connection.</p>
         </section>
 
@@ -98,11 +95,9 @@
         <section>
           <h4>Create Application Databases</h4>
           <p>Create your application's development and test databases by using this rake command:</p>
-          <pre>
-            <code>
+          <pre><code>
               rake db:create
-            </code>
-          </pre>
+            </code></pre>
           <p>This will create two databases in your MySQL server. For example, if your application's name is "appname", it will create databases called "appname_development" and "appname_test".</p>
         </section>
 
