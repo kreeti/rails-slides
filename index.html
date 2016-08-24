@@ -24,7 +24,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-          <h1>Build rails application using mysql, devise, bootstrap.<h1>
+          <h2>Build Rails Application using MySQL, Devise, Bootstrap</h2>
+          <h5 style="text-transform:none">by Prosenjit saha</h5>
         </section>
 				<section>
           <h6>Before creating the rails app make sure you have installed the followings: </h6>
@@ -60,8 +61,8 @@ rails new appname -d mysql
         <section>
           <p>Then move into the application's directory:</p>
           <pre><code data-trim>
-              cd appname
-            </code></pre>
+             cd appname
+          </code></pre>
           <p>The next step is to configure the application's database connection.</p>
         </section>
 
@@ -76,9 +77,7 @@ rails new appname -d mysql
             </code></pre>
 
             <p style="font-size: 25px;">Under the default section, find the line that says "password:" and add the password to the end of it. It should look something like this (replace the highlighted part with your MySQL root password):</p>
-            <pre><code data-trim>
-password: mysql_root_password
-              </code></pre>
+            <pre><code data-trim>password: mysql_root_password</code></pre>
 
             <p style="font-size: 25px;">Save and exit.</p>
           </section>
@@ -90,9 +89,7 @@ password: mysql_root_password
         <section>
           <h4>Create Application Databases</h4>
           <p>Create your application's development and test databases by using this rake command:</p>
-          <pre><code data-trim>
-              rake db:create
-            </code></pre>
+          <pre><code data-trim>rake db:create</code></pre>
           <p>This will create two databases in your MySQL server. For example, if your application's name is "appname", it will create databases called "appname_development" and "appname_test".</p>
         </section>
 
@@ -102,11 +99,7 @@ password: mysql_root_password
             <p>The easiest way to test that your application is able to use the MySQL database is to try to run it.</p>
 
             <p>For example, to run the development environment (the default), use this command:</p>
-            <pre>
-              <code data-trim>
-              rails server
-              </code>
-            </pre>
+            <pre><code data-trim>rails server</code></pre>
 
             <p>This will start your Rails application on your localhost on port 3000.</p>
           </section>
@@ -193,8 +186,6 @@ Initialized empty Git repository in /home/ubuntu/workspace/hello_app/.git/</code
               <p>The commands first tell Git that you want to add Bitbucket as the origin for your repository, and then push your repository up to the remote origin</p>
           </section>
         </section>
-
-
 
         <section>
           <h2>we will create our first controller and view</h2>
@@ -878,6 +869,12 @@ end            </code></pre>
             Now if you go to http://localhost:3000/posts you will see
             <img data-src="./image/posts-index.png">
           </section>
+        </section>
+        <section>
+          Do you have any question?
+        </section>
+        <section>
+          Thanks!!!
         </section>
       </div>
 		</div>
